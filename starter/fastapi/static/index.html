@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대시보드</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 24px; color: #1d2433; }
+  table { border-collapse: collapse; min-width: 360px; }
+  th, td { border-bottom: 1px solid #e3e6ec; padding: 6px 10px; text-align: left; font-variant-numeric: tabular-nums; }
+  th { background: #f4f6f9; }
+  .err { color: #b42318; }
+</style>
+</head>
+<body>
+  <h1>데이터 현황</h1>
+  <p id="status">불러오는 중...</p>
+  <div id="chart"></div>
+  <table id="t" hidden>
+    <thead><tr><th>파일</th><th>행</th><th>열</th></tr></thead>
+    <tbody></tbody>
+  </table>
+<script src="/static/chart.js"></script>
+<script>
+fetch('/api/summary').then(r => r.json()).then(d => {
+  const tb = document.querySelector('#t tbody');
+  d.files.forEach(f => {
+    const tr = document.createElement('tr');
+    [f.file, f.rows.toLocaleString(), f.cols].forEach(v => { const td = document.createElement('td'); td.textContent = v; tr.appendChild(td); });
+    tb.appendChild(tr);
+  });
+  document.getElementById('status').textContent = d.files.length ? '' : 'data/ 폴더에 CSV가 없습니다.';
+  document.getElementById('t').hidden = !d.files.length;
+  drawBars(document.getElementById('chart'), d.files.map(f => ({ label: f.file, value: f.rows })), { unit: '행' });
+}).catch(e => { const s = document.getElementById('status'); s.textContent = '불러오기 실패: ' + e; s.className = 'err'; });
+</script>
+</body>
+</html>
