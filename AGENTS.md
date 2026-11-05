@@ -68,7 +68,8 @@
 | `DECISIONS.md` | 결정을 내릴 때마다 한 줄 (시각 / 결정 / 근거 / 대안 / 검증) |
 | `DATA_NOTES.md` | 데이터 점검과 정제 규칙이 바뀔 때 |
 | `PLAN.md` | 합의 직후, 범위가 바뀔 때 |
-| `DESIGN.md` | 합의 직후 초안, 구조·알고리즘·기준값이 바뀔 때 (파이프라인·서빙 표 포함) |
+| `DESIGN.md` | 합의 직후 초안, 구조·알고리즘·기준값이 바뀔 때. 맨 위 '작성 기준'대로 자세히 (모든 칸에 `파일:함수:줄`과 숫자). **T2와 서술형용, T1은 읽지 않는다** |
+| `DESIGN_SHORT.md` | `DESIGN.md`를 고칠 때마다 같이 갱신 (40줄 이내). **T1은 구현할 때 이것만 읽는다** |
 | `ESSAY_BRIEF.md`, `ESSAY_QA.md` | 마감 직전 한 번 (`skills/essay-brief/SKILL.md`, 질문 은행 `QUESTIONS.md`) |
 | `HANDOFF.md` | 세션을 바꿀 때, 마감할 때 (`skills/handoff/SKILL.md`) |
 
@@ -83,7 +84,8 @@
 - **파일은 필요한 부분만 읽는다.** 전체를 다시 읽지 말고 `rg -n`으로 위치를 찾아 해당 범위만 본다. lockfile, 빌드 산출물, `node_modules`, 데이터 원본은 열지 않는다.
 - **보고는 짧게.** 변경 파일 목록 + 3줄 요약. 이미 보여준 코드를 다시 붙이지 않는다. diff는 요청받을 때만.
 - **수정은 한 번에 묶는다.** 같은 파일의 작은 수정 여러 개는 한 번에 처리한다.
-- **대화가 길어지면 세션을 바꾼다.** `skills/handoff/SKILL.md`로 HANDOFF를 갱신하고, 새 세션은 AGENTS·HANDOFF·REQUIREMENTS만 읽고 시작한다.
+- **설계는 짧은 판을 읽는다.** T1은 `DESIGN_SHORT.md`만 읽고 `DESIGN.md`는 열지 않는다. 짧은 판에 없는 내용이 필요하면 `rg -n`으로 `DESIGN.md`의 해당 줄만 본다.
+- **대화가 길어지면 세션을 바꾼다.** `skills/handoff/SKILL.md`로 HANDOFF를 갱신하고, 새 세션은 AGENTS·HANDOFF·REQUIREMENTS·DESIGN_SHORT만 읽고 시작한다.
 
 ## 7-1. 비용 (평가 항목)
 
@@ -100,7 +102,7 @@
 | | T1 구현 | T2 보조 |
 | --- | --- | --- |
 | 하는 일 | 계획 → 승인 → 구현·테스트·커밋 | 서버 실행·재시작, 데이터 점검, 검증(pytest·check.sh·ui_check·review), 문서 동기화, 서술형 브리핑 |
-| 고칠 수 있는 파일 | 코드·테스트·설정, `REQUIREMENTS.md`, `DECISIONS.md` 결정 표 | `DATA_NOTES.md`, `DESIGN.md`, `HANDOFF.md`, `DECISIONS.md` '서술형 재료', `ESSAY_*.md`, `out/` |
+| 고칠 수 있는 파일 | 코드·테스트·설정, `REQUIREMENTS.md`, `DECISIONS.md` 결정 표 | `DATA_NOTES.md`, `DESIGN.md`, `DESIGN_SHORT.md`, `HANDOFF.md`, `DECISIONS.md` '서술형 재료', `ESSAY_*.md`, `out/` |
 | 커밋 | `[R0n]`, `[KIT]` | `[DOCS]`만 |
 
 - **T2는 코드·테스트·설정 파일을 절대 고치지 않는다.** 문제를 찾으면 "T1에 보낼 문장"으로 한 줄씩 보고한다(사용자가 T1에 붙여 넣는다).

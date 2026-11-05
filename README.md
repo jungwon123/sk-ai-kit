@@ -15,6 +15,7 @@
 | --- | --- |
 | `AGENTS.md` | 코딩 에이전트 작업 규칙. 작업 폴더 루트에 복사하면 에이전트가 매 작업마다 따른다 |
 | `templates/DESIGN.md` | 한 장 설계: 범위, 아키텍처·데이터 파이프라인·서빙 표, 데이터 모델, 알고리즘과 트레이드오프, 기준값, 비기능 |
+| `templates/DESIGN_SHORT.md` | 구현용 설계 요약(40줄 이내). T1은 이것만 읽고, 자세한 DESIGN은 T2와 서술형이 쓴다 |
 | `templates/` | REQUIREMENTS · PLAN · DECISIONS · DATA_NOTES · HANDOFF · INTERVIEW 문서 틀 |
 | `prompts/codex.md` | 단계별 프롬프트 모음 (K0~K14, K2-1, K3-1, K6-1, K8-1, K14-1, 키트가 없을 때의 대체 프롬프트 P2·P7, 담당자 DM D1·D1-1·D2·D3) |
 | `PLAYBOOK.md` | 사람이 보는 180분 작업 순서표: 타임라인, 서브에이전트·비용 관리, 승인 규칙, 복습, 안 될 때 |

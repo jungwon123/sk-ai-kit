@@ -68,12 +68,12 @@ K3 합의 반영
 ```
 담당자와 합의한 내용: (합의문)
 PLAN의 성공 기준·범위, AGENTS의 과제별 규칙, REQUIREMENTS 순서에 반영하고 DECISIONS에 기록.
-DESIGN.md 초안도 채워: 범위, 아키텍처·파이프라인 표(예정 함수 이름), 기준값 표. 모르는 칸은 "(예정)". 커밋 [DOCS] 합의 반영
+DESIGN.md 초안도 채워: 범위, 아키텍처·파이프라인 표(예정 함수 이름), 기준값 표. 모르는 칸은 "(예정)". 그 내용으로 DESIGN_SHORT.md(40줄 이내)도 만들어. 커밋 [DOCS] 합의 반영
 ```
 
 K3-1 예외 찾기 (T2, K3 직후 25분. T1은 그동안 K5 준비)
 ```
-skills/edge-cases/SKILL.md 체크리스트를 README·합의문·데이터에 대어 봐. 해당하는 케이스만 DESIGN.md §8 표로 정리하고(처리 방식은 내 제안으로),
+skills/edge-cases/SKILL.md 체크리스트를 README·합의문·데이터에 대어 봐. 해당하는 케이스만 DESIGN.md §8 표로 정리하고(처리 방식은 내 제안으로) DESIGN_SHORT의 '예외 처리 방식'도 갱신하고,
 담당자에게 물어야 할 사실 질문만 D1-2 형식으로 최대 5개 뽑아. 코드는 쓰지 마.
 ```
 
@@ -92,7 +92,7 @@ kit/starter/(fastapi|nextjs)를 루트로 복사해서(이미 있는 파일은 �
 
 K6 요구사항 구현 (반복, 두 단계: 계획 승인 → 구현)
 ```
-R0n 계획만 3줄로 보고하고 멈춰: 바꿀 파일 / 구현 방법(대안 1개와 고른 이유) / 테스트 케이스(경계값 포함).
+DESIGN_SHORT.md 기준으로 R0n 계획만 3줄로 보고하고 멈춰: 바꿀 파일 / 구현 방법(대안 1개와 고른 이유) / 테스트 케이스(경계값 포함).
 완료 조건: (README 문구나 합의 기준)
 ```
 계획을 보고 승인 (고칠 게 있으면 "○○는 △△로 바꿔서 진행"):
@@ -120,7 +120,7 @@ skills/handoff/SKILL.md 절차대로 HANDOFF를 갱신하고 커밋해. 새 세�
 
 K8-1 문서 동기화 (T2, 요구사항 2~3개 끝날 때마다. T1은 구현 계속)
 ```
-git log와 코드를 보고 DESIGN.md(파이프라인 표·함수 이름·예외 표)와 DECISIONS '서술형 재료'를 실제와 맞춰. HANDOFF의 현재 상태도 갱신해.
+git log와 코드를 보고 DESIGN.md를 맨 위 '작성 기준'대로 자세히 갱신해(단계별 파일:함수:줄과 건수, 요청 흐름, 서빙 표, 트레이드오프, 예외 표, 검증 방법). DECISIONS '서술형 재료'도 실제와 맞춰. 마지막에 DESIGN_SHORT.md를 DESIGN과 맞게 40줄 이내로 다시 써. HANDOFF의 현재 상태도 갱신해.
 REQUIREMENTS 상태가 코드와 다르면 고치지 말고 "T1에 보낼 문장"으로 알려줘. 커밋 [DOCS] 동기화
 ```
 
@@ -150,11 +150,18 @@ skills/handoff/SKILL.md의 마감 체크리스트대로 PLAN·DECISIONS·HANDOFF
 안 된 기능을 됐다고 쓰지 마. 마지막으로 skills/fluent-korean/SKILL.md 지침으로 문서 문장만 교정해(내용·숫자·코드 변경 금지). 커밋 [DOCS] 마감
 ```
 
-K14 서술형 브리핑 (T2, 120분. T1은 그동안 K12 마감)
+K14 서술형 브리핑 1 (T2, 112분. T1이 선택 과제를 하는 동안)
 ```
-skills/essay-brief/SKILL.md 절차대로 ESSAY_BRIEF.md(2쪽)와 ESSAY_QA.md(QUESTIONS.md 50개 + 과제 고유 질문 5개 이상을 내 아키텍처로 답한 것)를 만들어.
-코드·테스트·커밋에 없는 내용은 쓰지 말고 "미확인"으로 남겨.
-끝나면 미확인 항목과, 문서와 코드가 어긋난 곳만 보고해.
+skills/essay-brief/SKILL.md 절차 1~3으로 DESIGN.md 빈 칸을 코드 기준으로 채우고 ESSAY_BRIEF.md(2쪽)를 만들어.
+그다음 절차 4 형식으로 ESSAY_QA.md에 QUESTIONS.md의 A~C(알고리즘, 파이프라인, 서빙)를 자세히 답해.
+코드·테스트·커밋에 없는 내용은 "미확인". 커밋 [DOCS] 브리핑 1. 끝나면 미확인 항목과 문서·코드 불일치만 보고해.
+```
+
+K14-2 서술형 브리핑 2 (T2, 120분. T1은 그동안 K12 마감)
+```
+skills/essay-brief/SKILL.md 절차 4 형식으로 ESSAY_QA.md에 QUESTIONS.md의 D~G(기준값, 예외, 코드 검증, AI 협업)를 자세히 답하고,
+과제 고유 질문을 5개 이상 만들어 같은 형식으로 답해(하나는 구현하지 않은 것을 전제로). DECISIONS 서술형 재료 5·6을 꼭 써.
+T1의 K12 커밋이 끝났으면 python3 scripts/evidence.py를 다시 돌리고 ESSAY_BRIEF의 숫자를 최신으로 맞춰. 커밋 [DOCS] 브리핑 2
 ```
 
 K14-1 예상 질문 (T2, 152분, 읽기 전용. 답은 내가 AI 없이 5분씩 직접 써 본다)
