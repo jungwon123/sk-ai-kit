@@ -15,6 +15,7 @@ T1 Codex에 보낼 첫 문장: `너는 T1 구현 세션이다. kit/START.md 읽�
 너는 T2 보조 세션이다. AGENTS.md 7-2를 읽고 지켜: 코드·테스트·설정은 절대 고치지 않고, 문제는 "T1에 보낼 문장"으로 보고해. 커밋은 git add <자기 파일>로 [DOCS]만. 준비되면 역할을 2줄로 요약하고 기다려.
 ```
 커밋이 멈추면 T1에: `git user 설정하고 다시 커밋해.`
+**본선(하루 과제)이면 사람은 `kit/PLAYBOOK_FINAL.md` 순서를 따른다.**
 (업데이트 질문이 나오면 거절. MCP는 붙이지 않는다: `kit/mcp/README.md`)
 
 ---
@@ -36,5 +37,5 @@ T1 Codex에 보낼 첫 문장: `너는 T1 구현 세션이다. kit/START.md 읽�
 필요할 때만 (사용자가 지시하면):
 - 앱 뼈대 (덮어쓰기 금지): `kit/starter/fastapi/`(Python API + 정적 화면) 또는 `kit/starter/nextjs/`(TypeScript). 과제 로직은 직접 구현
 - 오픈소스 후보: `kit/refs/REPOS.md`
-- 반도체 데이터: `kit/domain/semiconductor.md` 참고
+- 반도체 데이터: 용어 `kit/domain/semiconductor.md`, 분석 방법 `kit/domain/semiconductor-methods.md`
 - 프롬프트 모음: `kit/prompts/codex.md`
