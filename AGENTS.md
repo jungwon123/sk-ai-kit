@@ -85,6 +85,7 @@
 - **파일은 필요한 부분만 읽는다.** 전체를 다시 읽지 말고 `rg -n`으로 위치를 찾아 해당 범위만 본다. lockfile, 빌드 산출물, `node_modules`, 데이터 원본은 열지 않는다.
 - **보고는 짧게.** 변경 파일 목록 + 3줄 요약. 이미 보여준 코드를 다시 붙이지 않는다. diff는 요청받을 때만.
 - **수정은 한 번에 묶는다.** 같은 파일의 작은 수정 여러 개는 한 번에 처리한다.
+- **`kit/study/`는 사람용이다.** 읽지 않는다.
 - **설계는 짧은 판을 읽는다.** T1은 `DESIGN_SHORT.md`만 읽고 `DESIGN.md`는 열지 않는다. 짧은 판에 없는 내용이 필요하면 `rg -n`으로 `DESIGN.md`의 해당 줄만 본다.
 - **대화가 길어지면 세션을 바꾼다.** `skills/handoff/SKILL.md`로 HANDOFF를 갱신하고, 새 세션은 AGENTS·HANDOFF·REQUIREMENTS·DESIGN_SHORT만 읽고 시작한다.
 

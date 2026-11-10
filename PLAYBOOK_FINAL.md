@@ -1,7 +1,7 @@
 # PLAYBOOK_FINAL — 본선 하루 운영 (09:30–16:00)
 
 사람이 보는 순서표다. 시작 방법·T1/T2 역할·승인 규칙·비용 관리는 `PLAYBOOK.md`와 같다. 이 문서는 **하루짜리로 달라지는 것**만 적는다.
-프롬프트는 `prompts/codex.md`의 K번호(공통)와 F번호(본선 전용). 반도체 분석 방법은 `domain/semiconductor-methods.md`.
+기다리는 동안 볼 한 장 요약은 `kit/study/CHEATSHEET.md`(사람용). 프롬프트는 `prompts/codex.md`의 K번호(공통)와 F번호(본선 전용). 반도체 분석 방법은 `domain/semiconductor-methods.md`.
 
 ## 원칙
 
