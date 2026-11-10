@@ -1,7 +1,7 @@
 # CHEATSHEET — 사람용 요약 (Codex는 읽지 않는다)
 
 시험 중 Codex가 일하는 동안, 담당자에게 묻기 직전, 결과를 해석할 때 펼쳐 보는 한 장. 루트로 복사하지 않는다.
-자세한 방법은 `kit/domain/semiconductor-methods.md`, 용어는 `kit/domain/semiconductor.md`.
+반도체 개념을 자세히 보려면 `kit/study/SEMICONDUCTOR.md`(공정·메모리·테스트·결함·수율 모델·손 계산), 분석 방법은 `kit/domain/semiconductor-methods.md`.
 
 ## 1. 반도체 핵심 개념
 
@@ -56,6 +56,7 @@
 - **재실행 안전**: UNIQUE + UPSERT, 실패하면 트랜잭션 롤백
 - **`def` vs `async def`**: pandas·sqlite3는 블로킹 → `def`(스레드풀)
 - **상태코드**: 422 입력 오류, 404 없음, 409 충돌, 500은 내부 정보 숨기고 로그
+- **배포 전제**: 공정 데이터는 기밀 → 사내망 배포, 외부 API 없음, 의존성 버전 고정(사내 미러·Docker), 운영 시 사내 계정 연동과 조회·내보내기 감사 로그
 - **10배**: 인덱스·캐시·페이지네이션 / **100배**: chunk·Postgres·작업 큐. 처음 깨지는 곳을 말한다
 
 ## 6. AI가 짠 코드 볼 때 (승인 직전 30초)
